@@ -1,0 +1,357 @@
+/* 載入字型 */
+@import url("https://fonts.googleapis.com/css?family=Noto+Sans+TC:400,700&display=swap&subset=chinese-traditional");
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+}
+html {
+  scroll-behavior: smooth;
+}
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+body {
+  background-color: #f6f7f8;
+  font-family: "Noto Sans TC", sans-serif; /* 設定字型 */
+  font-size: 1rem;
+  line-height: 1.4;
+  margin: 0;
+}
+h1,
+h2,
+h3,
+h4,
+h5 {
+  margin: 0;
+  line-height: 0.9;
+}
+p {
+  margin: 0;
+}
+ul,
+li {
+  list-style-type: none; /* 拿掉前方圈圈 */
+  margin: 0;
+  padding: 0;
+}
+a {
+  text-decoration: none; /* 拿掉底線 */
+}
+/* 設定區塊寬度一致並置中 */
+.container {
+  width: 85%;
+  margin: 0 auto 3rem auto;
+}
+/* 共用按鈕樣式 */
+.action {
+  color: white;
+  background: #39bae6;
+  border-radius: 0.25rem;
+  display: inline-block;
+  font-size: 1rem;
+  padding: 0.25rem 1rem;
+  transition: all 0.1s linear;
+}
+.action:hover {
+  background: #267c99;
+  /* 陰影 */
+  -webkit-box-shadow: 0px 1px 5px 0px rgba(87, 87, 87, 1);
+  -moz-box-shadow: 0px 1px 5px 0px rgba(87, 87, 87, 1);
+  box-shadow: 0px 1px 5px 0px rgba(87, 87, 87, 1);
+}
+.background-image {
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+/* header */
+.header {
+  background-color: rgba(255, 255, 255, 0.95);
+  position: fixed;
+/*   background-color: gray; */
+  width: 100%;
+  height: 60px;
+  z-index: 999;
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+}
+.navbar-toggle {
+  position: absolute;
+  display: none;
+}
+.navbar-toggle-label {
+  position: absolute;
+  display: flex;
+  left: 2%;
+  top: 0;
+  bottom: 0;
+  align-items: center;
+}
+.hamburger {
+  position: relative;
+  width: 30px;
+  height: 3px;
+  background: black;
+}
+.hamburger::before {
+  content: "";
+  position: absolute;
+  top: 8px;
+  width: 30px;
+  height: 3px;
+  background: black;
+}
+.hamburger::after {
+  content: "";
+  position: absolute;
+  width: 30px;
+  height: 3px;
+  bottom: 8px;
+  background: black;
+}
+.navbar-toggle:checked ~ .nav-list {
+  transform: scale(1, 1);
+}
+.nav-list {
+  position: absolute;
+  top: 100%;
+  background: #ffffff;
+  width: 100%;
+  transform: scale(1, 0);
+  transition: transform 0.3s ease-out;
+  transform-origin: top;
+}
+.nav-item {
+  margin: 1rem;
+  opacity: 0;
+}
+.navbar-toggle:checked ~ .nav-list .nav-item {
+  opacity: 1;
+  transition: opacity 0.2s ease-out 0.15s;
+}
+.nav-link {
+  color: black;
+}
+.navbar-brand {
+  display: flex;
+  grid-column: 2/3;
+  align-items: center;
+  justify-content: center;
+  color: black;
+  column-gap: 1rem;
+  flex-wrap: wrap;
+}
+.nav-logo {
+  height: 2.5rem;
+}
+
+.container{
+/*   background:gray; */
+  padding-top:92px;
+}
+.select-wrapper{
+  display:grid;
+  grid-template-columns:repeat(10,1fr);
+  grid-template-rows:1fr 1fr;
+  grid-gap:1.5rem;
+}
+.main-container{
+  max-width: 1595px;
+  margin: 0 auto;
+}
+
+.container h2{
+  font-size:1.8rem;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  flex-wrap:wrap;
+  margin-bottom:1.5rem;
+}
+.select-wrapper select{
+  font-size:1.5rem;
+}
+#size{
+  grid-column:1/6;
+}
+#color{
+  grid-column:6/11;
+}
+#sort{
+  grid-column:3/9;
+}
+
+.product-wrapper{
+  width:100%;
+  display:grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-gap:1rem;
+}
+.card{
+  position:relative;
+  display:flex;
+  flex-direction:column;
+  justify-self:center;
+}
+.product-img{
+  
+}
+
+.cover-img{
+  left:0;
+  top:0;
+  width:100%;
+  aspect-ratio: 1/1;
+  transition:opacity 0.2s ease-out;
+}
+.real-img{
+  transition:opacity 0.2s ease-out;
+  position:absolute;
+  left:0;
+  aspect-ratio: 1/1;
+  top:0;
+  object-fit:cover;
+  opacity:0;
+  width:100%;
+}
+.card:hover .cover-img{
+  opacity:0;
+}
+.card:hover .real-img{
+  opacity:1;
+}
+}
+.product-info{
+  font-size:0.8rem;
+}
+.product-title{
+  display:flex;
+  justify-content:center;
+}
+.product-price{
+  display:flex;
+  justify-content:center;
+}
+
+
+.subscription-wrapper{
+  display:flex;
+  flex-direction:column;
+  background-repeat: no-repeat;
+  align-items:center;
+  background-image:url("https://assets-lighthouse.alphacamp.co/uploads/image/file/14376/template.png");
+  height:230px;
+  background-size: cover;
+  background-position: center;
+  justify-content:center;
+}
+.subscript {
+  margin-top:2rem;
+  width: 55%;
+  padding-left: 20px;
+  background: white;
+  border-radius: 25px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.subscription input{
+  all: unset;
+  background: white;
+  width: 55%;
+  height: 25px;
+  padding: 10px;
+  border: none;
+}
+.subscription button{
+  all: unset;
+  width: 90px;
+  font-weight: 700;
+  font-size: 1rem;
+  letter-spacing: 1px;
+  color: white;
+  background: #000;
+  height: 25px;
+  padding: 10px 15px;
+  border-radius: 0 25px 25px 0;
+  line-height: 100%;
+  text-align: center;
+}
+.subsript-title{
+  text-align: center;
+  margin: 40px 8px;
+  font-weight: 700;
+  font-size: 1.2rem;
+}
+
+footer{
+  display:flex;
+  justify-content:center;
+}
+
+@media screen and (min-width: 600px) {
+  .select-wrapper{
+    
+  }
+  #size{
+    grid-column:1/4;
+  }
+  #color{
+    grid-column:4/8;
+  }
+  #sort{
+    grid-column:8/11;
+  }
+}
+
+@media screen and (min-width: 960px) {
+  header {
+    grid-template-columns: 2fr auto minmax(100px, 1fr) 1fr;
+  }
+  .navbar-brand {
+    flex-wrap: nowrap;
+    font-size: 1.1rem;
+    grid-column: 1/2;
+    margin-left: 2.5rem;
+    justify-content: start;
+  }
+  .nav-logo {
+    height: 52px;
+  }
+  .navbar-toggle-label {
+    display: none;
+  }
+
+  .nav-list {
+    all: unset;
+    display: grid;
+    grid-auto-flow: column;
+    grid-column: 2/3;
+    height: 100%;
+    grid-gap: 70px;
+    align-items: center;
+    justify-content: center;
+  }
+  .nav-item {
+    opacity: 1;
+  }
+  #size{
+    grid-column:3/5;
+  }
+  #color{
+    grid-column:5/7;
+  }
+  #sort{
+    grid-column:7/9;
+  }
+   .product-wrapper {
+    /* 確保螢幕尺寸超過 960 時，依然保持一列 4 個商品 */
+    grid-template-columns: repeat(4, 1fr);
+  }
+  
+}
